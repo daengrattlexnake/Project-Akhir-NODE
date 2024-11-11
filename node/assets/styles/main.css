@@ -1,0 +1,573 @@
+/* Color Palette */
+:root {
+    --dark: #181C14;
+    --medium-dark: #3C3D37;
+    --teal: #697565;
+    --light-teal: #ECDFCC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--dark);
+    color: var(--light-teal);
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--dark);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.logo-img {
+    height: 40px; /* Adjust based on your layout */
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: var(--light-teal);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links li a:hover {
+    color: var(--teal);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+
+
+/* Style for Modal */
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #222; /* Darker background for contrast */
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Limit maximum width */
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    position: relative; /* For close button positioning */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease; /* Smooth fade-in animation */
+}
+
+/* Fade-in animation for modal */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 16px; /* Adjusted size for better visibility */
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #ff4c4c; /* Red color on hover */
+    transform: scale(1.2); /* Enlarges slightly on hover */
+}
+
+.close-btn:focus {
+    outline: none; /* Removes default outline */
+}
+
+/* Modal Header */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Auth Form Styles */
+.auth-form {
+    display: block;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: #444;
+    color: white;
+    font-size: 14px;
+    box-sizing: border-box; /* Ensures padding doesn’t affect total width */
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 10px;
+    background: #50b3a2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 14px;
+}
+
+.auth-form button:hover {
+    background: #409082;
+}
+
+/* Link inside the auth form */
+.auth-form p a {
+    color: #50b3a2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.auth-form p a:hover {
+    text-decoration: underline;
+    color: #409082;
+}
+
+/* Checkbox style inside auth form */
+.input-box input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.input-box label {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.popup-content {
+    background-color: var(--medium-dark);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close {
+    color: var(--light-teal);
+    font-size: 1.5em;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-teal);
+    background-color: var(--dark);
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1;
+}
+
+.hero-slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: var(--light-teal);
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s;
+    z-index: 2;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+/* Highlight Section */
+.highlight {
+    padding: 10px 5% 50px;
+    text-align: center;
+}
+
+/* Create a flex container for the highlight content */
+.highlight-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.highlight-slider {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border-radius: 4px;
+}
+
+.highlight-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.highlight-slide.active {
+    opacity: 1;
+}
+
+.highlight-text {
+    flex: 1;
+    padding: 20px;
+    color: var(--teal);
+    font-size: 1.2em;
+    text-align: left;
+}
+
+.highlight-text p {
+    margin-bottom: 20px;
+    font-size: 1em;
+    color: var(--teal);
+    line-height: 1.6;
+}
+
+.button-primary {
+    background-color: var(--teal);
+    color: var(--light-teal);
+    padding: 12px 30px;
+    font-size: 15px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button-primary:hover {
+    background-color: var(--light-teal);
+    color: var(--dark);
+    transform: scale(1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .highlight-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .highlight-slider {
+        width: 100%;
+        height: 200px;
+    }
+
+    .highlight-text {
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+
+/* Team Section */
+.team {
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.team-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: var(--medium-dark);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.card img {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 60%;
+}
+
+.card-info h3 {
+    color: var(--light-teal);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark);
+    padding: 20px 5%;
+    color: var(--light-teal);
+    position: relative;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 110px;
+}
+
+/* Update untuk logo agar sejajar dengan icon sosmed */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logo img {
+    height: 100px;
+    width: auto;
+    display: block;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 25px;
+    height: 25px;
+}
+
+.footer::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.footer-description {
+    margin-top: -150px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.footer-description p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.copyright {
+    margin-top: 30px;
+    font-size: 14px;
+    color: var(--light-teal);
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        margin-bottom: 5px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .highlight {
+        padding: 50px 2%;
+    }
+}
+
+/* Container untuk card */
+  /* Custom CSS untuk card */
+  .user-cards, .kendaraan-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.user-card, .kendaraan-card {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.user-card:hover, .kendaraan-card:hover {
+    transform: scale(1.05);
+}
+
+.user-card i, .kendaraan-card i {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.kendaraan-card img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .user-cards, .vehicle-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-card, .vehicle-card {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+}

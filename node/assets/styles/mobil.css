@@ -1,0 +1,276 @@
+/* Color Palette */
+:root {
+    --dark: #181C14;
+    --medium-dark: #3C3D37;
+    --teal: #697565;
+    --light-teal: #ECDFCC;
+}
+
+/* General Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--light-teal);
+    color: var(--dark);
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--dark);
+    color: white;
+    z-index: 10; /* Ensure navbar is always on top */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo img {
+    max-height: 50px;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar .search-bar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.navbar .search-bar input {
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+}
+
+.navbar .search-bar button {
+    background-color: var(--teal);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+/* Container untuk halaman */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--light-teal);
+}
+
+/* Tombol untuk menambah kendaraan */
+.container-btn {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.container-btn .btn-add {
+    padding: 10px 20px;
+    background-color: var(--teal);
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.container-btn .btn-add:hover {
+    background-color: var(--medium-dark);
+}
+
+/* Styling untuk tabel kendaraan */
+.recent-activity {
+    background-color: var(--medium-dark);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.recent-activity h2 {
+    font-size: 1.8em;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.recent-activity table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+}
+
+.recent-activity th, .recent-activity td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--teal);
+}
+
+.recent-activity th {
+    background-color: var(--teal);
+}
+
+.recent-activity tr:hover {
+    background-color: var(--medium-dark);
+}
+
+/* Styling gambar di dalam tabel */
+.table-img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Styling untuk tombol Edit dan Hapus */
+.btn-edit, .btn-delete {
+    padding: 6px 12px;
+    margin: 0 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.btn-edit {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #45a049;
+}
+
+.btn-delete {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #da190b;
+}
+/* Pagination Styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination-btn {
+    padding: 10px 15px;
+    margin: 0 5px;
+    background-color: var(--teal);
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-btn:hover {
+    background-color: var(--medium-dark);
+}
+
+.pagination-btn.active {
+    background-color: var(--medium-dark);
+    pointer-events: none;
+}
+
+/* Edit Kendaraan Container */
+.container-edit {
+    max-width: 800px;
+    margin: 60px auto; /* Add some space from the top */
+    padding: 30px;
+    background-color: var(--dark);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+/* var(--light-teal) */
+/* Title */
+.container-edit h2 {
+    text-align: center;
+    color: var(--light-teal);
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Form Elements */
+form label {
+    display: block;
+    margin: 15px 0 5px;
+    font-size: 1.1em;
+    color: var(--light-teal)   ;
+}
+
+form input[type="text"],
+form textarea,
+form input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid var(--medium-dark);
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Current Image Display */
+form p {
+    font-size: 0.9em;
+    color: var(--light-teal);
+}
+
+form img {
+    display: block;
+    margin-top: 8px;
+    max-width: 150px;
+    border-radius: 5px;
+}
+
+/* Button Styling */
+form button,
+form .btn-cancel {
+    padding: 5px 25px;
+    font-size: 1em;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 5px;
+}
+
+form button.btn-edit {
+    background-color: var(--teal);
+    color: white;
+    border: none;
+}
+
+form button.btn-edit:hover {
+    background-color: var(--medium-dark);
+}
+
+
+form .btn-cancel:hover {
+    background-color: var(--medium-dark);
+}

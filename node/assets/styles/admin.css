@@ -1,0 +1,222 @@
+/* Color Palette */
+:root {
+    --dark: #181C14;
+    --medium-dark: #3C3D37;
+    --teal: #697565;
+    --light-teal: #ECDFCC;
+}
+
+/* General Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--light-teal);
+    color: var(--dark);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--dark);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.logo-img {
+    height: 40px; /* Adjust based on your layout */
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: var(--light-teal);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links li a:hover {
+    color: var(--teal);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+/* Hero Section - Full Screen */
+.hero {
+    position: relative;
+    height: 50vh; /* Full height of the viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+/* Overlay for the Hero Section */
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+/* Hero Slider for Background Images */
+.hero-slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Text Inside Hero */
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5em;
+}
+
+/* Main Content - below hero */
+.main-content {
+    padding-top: 100vh; /* Push the content below the hero section */
+    padding: 20px;
+    background-color: var(--medium-dark);
+    min-height: 100vh; /* Ensure the content section takes full height */
+    color: white;
+}
+
+/* Dashboard Section */
+.dashboard-cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: var(--medium-dark);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+}
+
+.card i {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1.2em;
+}
+
+/* Recent Activity Table */
+.recent-activity {
+    margin-top: 40px;
+    background-color: var(--medium-dark);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.recent-activity h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.recent-activity table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recent-activity th, .recent-activity td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--teal);
+}
+
+.recent-activity th {
+    background-color: var(--teal);
+}
+
+.recent-activity tr:hover {
+    background-color: var(--teal);
+}
+
+.hero-slider .slide {
+    animation: slide 15s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        flex-direction: column;
+    }
+
+    .dashboard-cards {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .card {
+        width: 100%;
+    }
+}

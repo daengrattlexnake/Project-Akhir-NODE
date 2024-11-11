@@ -1,0 +1,177 @@
+/* Color Palette */
+:root {
+    --dark: #181C14;
+    --medium-dark: #3C3D37;
+    --teal: #697565;
+    --light-teal: #ECDFCC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--light-teal);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--dark);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.logo-img {
+    height: 40px; /* Adjust based on your layout */
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: var(--light-teal);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links li a:hover {
+    color: var(--teal);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.form-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: var(--medium-dark);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--medium-dark);
+    font-weight: 500;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--teal);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--medium-dark);
+}
+
+textarea.form-input {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.file-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-input-label {
+    background-color: var(--teal);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.file-input-label:hover {
+    background-color: var(--medium-dark);
+}
+
+.file-name {
+    color: var(--medium-dark);
+    font-size: 0.9rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--medium-dark);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .container {
+        margin: 1rem auto;
+    }
+    
+    .form-card {
+        padding: 1.5rem;
+    }
+    
+    .file-input-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}

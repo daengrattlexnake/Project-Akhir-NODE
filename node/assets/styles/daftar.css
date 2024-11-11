@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url('../asset/1967-ford-mustang.jpeg') no-repeat center center/cover; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.modal-content {
+    background-color: rgba(51, 51, 51, 0.8); 
+    padding: 2rem;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 1.5rem;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 1.5rem;
+    text-align: left; 
+}
+
+.input-box label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #444;
+    color: white;
+    font-size: 14px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #50b3a2;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #409082;
+}
+
+.modal-content p {
+    margin-top: 1rem;
+    font-size: 14px;
+    color: white;
+}
+
+.modal-content p a {
+    color: #50b3a2;
+    text-decoration: none;
+}
+
+.modal-content p a:hover {
+    text-decoration: underline;
+}
